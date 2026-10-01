@@ -1,0 +1,208 @@
+
+/* 1. RESET E ESTILO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+@import url(footer.css);
+body {
+    background-color: #f1f5f9; /* Fundo cinza bem claro para destacar a folha branca */
+    color: #334155;
+}
+
+/* 2. CABEÇALHO SUPERIOR */
+header {
+    background-color: #1e3a8a; /* Azul escuro acadêmico */
+    color: white;
+    padding: 1.2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header nav a {
+    color: #e0e7ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+/* 3. LAYOUT PRINCIPAL (Lado a Lado) */
+.container-gerador {
+    display: flex;
+    gap: 2.5rem;
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* align-items: flex-start é essencial para o position: sticky do painel funcionar */
+    align-items: flex-start; 
+}
+
+/* 4. PAINEL LATERAL DE FILTROS */
+.painel-lateral {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 350px;
+    flex-shrink: 0; /* Impede que o painel seja esmagado */
+    
+    /* A Mágica do Painel Fixo: */
+    position: sticky;
+    top: 2.5rem; 
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto; /* Cria barra de rolagem só no painel se a tela for pequena */
+}
+
+.painel-lateral h2 {
+    font-size: 1.4rem;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    background-color: #f8fafc;
+}
+
+legend {
+    background: white;
+    padding: 0 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.95rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: scale(1.1);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+input[type="number"] {
+    width: 70px;
+    margin-left: auto; /* Joga a caixinha de número para o final da linha */
+    padding: 0.4rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+/* 5. BOTÕES */
+button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#btn-gerar {
+    background-color: #2563eb; /* Azul botão */
+    color: white;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+#btn-gerar:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* 6. ÁREA DE PRÉVIA (A FOLHA) */
+.area-previa {
+    flex-grow: 1; /* Ocupa todo o resto do espaço */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opcoes-cabecalho {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Simulação de um Papel A4 */
+.folha-a4 {
+    background: white;
+    width: 100%;
+    max-width: 800px; 
+    min-height: 1130px; /* Proporção A4 */
+    padding: 4rem 5rem; /* Margens generosas de impressão */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    /* Fundo imitando levemente a textura de papel (opcional) */
+    background-image: radial-gradient(#f8fafc 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.mensagem-vazia {
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 10rem;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+#btn-exportar {
+    background-color: #10b981; /* Verde para ação final */
+    color: white;
+    max-width: 400px;
+    margin-bottom: 3rem;
+}
+
+#btn-exportar:hover:not(:disabled) {
+    background-color: #059669;
+}
+
+#btn-exportar:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+    color: #94a3b8;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Listas - Logaritmos</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO: Navegação principal -->
+    <header>
+        <h1>EduLog: Gerador de Exercícios</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Criar Lista</a></li>
+                <li><a href="#">Banco de Questões</a></li>
+                <li><a href="#">Manual do Professor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL: Onde a mágica acontece -->
+    <main class="container-gerador">
+
+        <!-- PAINEL LATERAL: Filtros e Configurações -->
+        <aside class="painel-lateral">
+            <h2>Configurar Lista</h2>
+            
+            <form id="form-gerador">
+                <!-- Seleção de Propriedades -->
+                <fieldset>
+                    <legend>Propriedades dos Logaritmos</legend>
+                    <label><input type="checkbox" name="prop" value="produto"> Logaritmo do Produto</label><br>
+                    <label><input type="checkbox" name="prop" value="quociente"> Logaritmo do Quociente</label><br>
+                    <label><input type="checkbox" name="prop" value="potencia"> Logaritmo da Potência</label><br>
+                    <label><input type="checkbox" name="prop" value="mudanca_base"> Mudança de Base</label>
+                </fieldset>
+
+                <!-- Contexto -->
+                <fieldset>
+                    <legend>Contexto (Opcional)</legend>
+                    <input type="text" id="campo-contexto" placeholder="Ex: Terremotos, Juros, pH...">
+                </fieldset>
+
+                <!-- Níveis Cognitivos e Quantidades -->
+                <fieldset>
+                    <legend>Quantidade por Nível</legend>
+                    
+                    <label>Memorização: 
+                        <input type="number" id="qtd-memorizacao" min="0" value="0">
+                    </label><br>
+                    
+                    <label>Prática (Sem Conexões): 
+                        <input type="number" id="qtd-pratica" min="0" value="0">
+                    </label><br>
+                    
+                    <label>Aplicação (Com Conexões): 
+                        <input type="number" id="qtd-aplicacao" min="0" value="0">
+                    </label><br>
+                    
+                    <label>Fazer Matemática: 
+                        <input type="number" id="qtd-fazer-mat" min="0" value="0">
+                    </label>
+                </fieldset>
+
+                <button type="button" id="btn-gerar">Gerar Questões</button>
+            </form>
+        </aside>
+
+        <!-- ÁREA DE PRÉVIA: Onde as questões aparecem -->
+        <section class="area-previa">
+            <div class="opcoes-cabecalho">
+                <label>Cabeçalho da Folha: </label>
+                <label><input type="radio" name="cabecalho" value="em_branco" checked> Em Branco</label>
+                <label><input type="radio" name="cabecalho" value="padrao"> Padrão Escolar</label>
+            </div>
+
+            <div id="documento-preview" class="folha-a4">
+                <!-- As questões geradas pela IA aparecerão aqui dentro -->
+                <p class="mensagem-vazia">Suas questões aparecerão aqui. Selecione os filtros ao lado e clique em "Gerar".</p>
+            </div>
+
+            <button type="button" id="btn-exportar" disabled>Exportar para Word (.docx)</button>
+        </section>
+
+    </main>
+    <footer>
+        <div class="content">
+        <div class="top">
+        <div class="logo-details">
+        <a  class="logo_name" href="./index.html"> <span><img src="./imagens/cas sem fundo.svg" alt=""> <p>  Custom Art Store </p> </span> </a>
+        </div>
+        <div class="media-icons">
+            <a class="social" href="https://www.instagram.com/custom.artstore/" target="_blank"><img class="instagram" src="./imagens/instagram-svgrepo-com.svg" alt=""></a>
+            <a class="social" href="" target="_blank"><img class="tiktok" src="./imagens/tktk.svg" alt=""></a>
+            <a class="social" href="https://api.whatsapp.com/send/?phone=554198239225&text&type=phone_number&app_absent=0" target="_blank"><img class="whatsapp" src="./imagens/whats.svg" alt=""></a>
+            <a class="social" href="mailto:cas.customartstore@gmail.com" target="_blank"><img class="email" src="./imagens/email (2).svg" alt=""></a>
+        </div>
+        </div>
+        <div class="link-boxes">
+        <ul class="box">
+        <li class="link_name">Links</li>
+        <li><a href="./index.html">Início</a></li>
+        <li><a href="./html/produtos.html">Nossos produtos</a></li>
+        <li><a href="./html/contato.html">Contatos | Sobre nós</a></li>
+        </ul>
+        <ul class="box">
+            <li class="link_name">Serviços</li>
+            <li><a href="#">Personalização de produtos</a></li>
+            <li><a href="#">Brindes</a></li>
+            <li><a href="#">Presentes</a></li>
+            <li><a href="#">Ítens comemorativos</a></li>
+
+        </ul>
+        <ul class="box">
+        <li class="link_name">Outros Serviços</li>
+        <li><a href="#">Edição de imagens</a></li>
+        <li><a href="#">Confecção de uniformes</a></li>
+        <li><a href="#">Produtos temáticos</a></li>
+        <li><a href="#">Gestão de redes sociais</a></li>
+        </ul>
+        <ul class="box">
+        <ul class="box">
+        <li class="link_name">Contatos</li>
+        <li><a class="numero" href=" target="_blank">41 99823 9225</a></li>
+        <li><a href="https://www.instagram.com/custom.artstore/" target="_blank">@custom.artstore</a></li>
+        </ul>
+    </footer>
+
+    <footer class="end">
+        <p>DES Codex™ | 2023</p>
+        <p>Desenvolvido por <a class="link" href="https://github.com/JhonDGomeS" target="_blank">Jhonatan Dias Gomes</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+</html>
